@@ -6,11 +6,11 @@ export function verifyUserRole(roleToVerify: 'ADMIN' | 'MEMBER') {
         const { role } = request.user
 
         if (role != roleToVerify) {
-            reply.status(401).send({
+            return reply.status(401).send({
                 message: 'Unauthorized'
             })
 
-            return
+            
         }
 
     }
